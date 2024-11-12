@@ -57,9 +57,10 @@ void solve(){
     ll n; cin>>n;
     ll sum=0;
     for(ll i=1;i*i<=n;i++){
-        if(i==1) sum++;
-        else if(n%i==0 && i != n/i) sum += (i+n/i);
-        else if(n%i==0) sum += i;
+       if(n%i == 0){
+        sum += i;
+        if(i != n/i && i!=1) sum += n/i;
+       }
     }
     out(sum)
 }
